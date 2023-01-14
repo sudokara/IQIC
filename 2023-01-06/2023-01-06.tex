@@ -1,0 +1,98 @@
+\documentclass{article}
+
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+\title{Introduction to Quantum Information and Computing - Lecture 2}
+\author{Shrikara A}
+\date{6th January, 2023}
+
+\begin{document}
+    
+
+    \pagenumbering{gobble}
+    \maketitle
+    \vfill
+    \tableofcontents
+    \newpage
+    \pagenumbering{arabic}
+
+
+    \section{Axioms of Quantum Mechanics}
+        
+        \subsection{Axiom 1 : Quantum Systems}
+            A closed quantum system can be represented by its state $| \psi \rangle \in \mathcal{H}$ where $\langle \psi | \psi \rangle = 1$.
+        
+
+        \subsection{Axiom 2 : Observables}
+            Observables are given by Hermitian operators, which take real eigenvalues. (Proven in assignment 1). 
+
+            \textit{Observables are Linear Operators.} $\hat{O} : \mathcal{H}_1 \rightarrow \mathcal{H}_2$ where $\hat{O}$ is the linear operator denoting the observable. 
+
+            \textit{Observables are Hermitian.} $\hat{O} = \hat{O}^{\dagger}$
+
+            Consider $\psi \in \mathcal{H}_1$, $\phi \in \mathcal{H}_2$.
+            \begin{equation*}
+                \langle \psi , \hat{O} \phi \rangle = \langle \hat{O}^{\dagger} \psi , \phi \rangle
+            \end{equation*}
+            In particular, since $\hat{O}$ is Hermitian, 
+            \begin{align*}
+                \langle \psi , \hat{O} \phi \rangle = \langle \hat{O} \psi , \phi \rangle \hspace{0.2cm}
+                \forall \psi, \phi
+            \end{align*}
+            Since $\hat{O}$ is Hermitian, $\mathcal{H}_1$ and $\mathcal{H}_2$ are isomorphic. Also, its eigenvalues are real and distinct eigenvectors are orthogonal(Proved in assignment 1.)\\
+
+
+            Consider the sprectral decomposition of observable $\hat{O}$:
+            $
+                \hat{O} = \sum_{a_i} \lambda_i | a_i \rangle \langle a_i|
+            $ 
+            where $|a_i \rangle$s are part of the orthonormal basis. Then 
+            \begin{align*}
+                \hat{O}|a_j \rangle &= \sum_{a_i} \lambda_i |a_i \rangle \langle a_i | |a_j \rangle\\
+                &=\sum_{a_i} \lambda_i |a_i \rangle \delta_{ij}\\
+                &= \lambda_j |a_j \rangle
+            \end{align*}
+
+        \subsection{Aside}
+            If $\dim \mathcal{H} = d$ and ${|\alpha_1 \rangle , |\alpha_2 \rangle , \ldots , |\alpha_d \rangle}$ is an orthonormal basis, 
+            \begin{align*}
+                &| \psi \rangle = \sum_1^d c_i | \alpha_i \rangle \hspace{0.2cm} ,c_i \in \mathbb{C}\\
+                &\sum_1^d |c_i|^2 = 1 
+            \end{align*}
+
+            WLOG, take $| \alpha_1 \rangle = \begin{bmatrix}
+                1\\
+                0\\
+                \vdots\\
+                0
+            \end{bmatrix}, |\alpha_2 \rangle = \begin{bmatrix}
+                0\\
+                1\\
+                \vdots\\
+                0
+            \end{bmatrix} \ldots$ as the standard orthonormal basis and denote them by $|0 \rangle, |1 \rangle , \ldots ,|d-1 \rangle $
+
+            For an operator $\hat{A}$, if $\hat{A} \hat{A}^{\dagger} = \hat{A}^{\dagger} \hat{A}$, $\hat{A}|a \rangle = a | a \rangle$, where $a$ is the eigenvalue and $| a \rangle$ is the corresponding eigenvector.
+
+            A state $|\psi \rangle$ is of norm 1, i.e. if $| \psi \rangle = \begin{bmatrix}
+                a_1 \\
+                a_2 \\
+                \vdots \\
+                a_d
+            \end{bmatrix}$, 
+            $\sqrt{\sum_i |a_i|^2} = 1$
+
+        
+        \subsection{Axiom 3 : Measurement}
+        Measurement $\hat{M}$ corresponding to an observable $\hat{O}$ for any state $| \psi \rangle$ is such that $\hat{M} | \psi \rangle \rightarrow |a_i \rangle$ with outcome $\lambda_i$. After measurement, the final state of the system is one of the eigenstates. Further measurement will produce the same eigenstate and eigenvalue (as long as the repeated measurement is not preceded by the measurement of some other observable.)
+
+
+        A projection matrix $\mathbb{P}$ is a matrix such that $\mathbb{P}^2 = \mathbb{P}$.  
+        $\hat{M}$ is a projection matrix.
+
+
+        \subsection{Axiom 4 : Evolution}
+            The evolution of quantum states is given by a unitary transformation, ${U : \mathcal{H} \rightarrow \mathcal{H}}$ where $U^{\dagger}U = UU^{\dagger} = \mathbb{I}$ 
+\end{document}
