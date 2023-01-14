@@ -1,0 +1,67 @@
+\documentclass{article}
+
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+\title{Introduction to Quantum Information and Computing - Lecture 1}
+\author{Shrikara A} % add contributors
+\date{3rd January, 2023}
+
+\begin{document}
+
+
+    \pagenumbering{gobble}
+    \maketitle
+    \vfill
+    \tableofcontents
+    \newpage
+    \pagenumbering{arabic}
+
+
+    %fill
+    \section{Introduction and Motivation}
+        \subsection{Introduction}
+
+        \subsection{Stern-Gerlach Experiment}
+
+        \subsection{Shannon's Theory of Information}
+
+        \subsection{Entropy as the Expectation of Surprise}
+
+        \subsection{No Cloning Theorem}
+
+        \subsection{Computation as a Subset of Information}
+
+    \subsection{Outline of the Course}
+        \begin{enumerate}
+            \item Postulates
+            \item Everything is a quantum channel
+            \item Entanglement, Separability, Nonlocality
+            \item Teleportation, No Cloning
+            \item Entropy, Trace Distance
+        \end{enumerate}
+
+
+    \section{Finite Dimensional Hilbert Spaces}
+        A \textit{d}-dimensional Hilbert space $\mathcal{H}$ ($1 \leq d < \infty$) is a complex vector space with an inner product defined on it. A vector in the Hilbert space $\mathcal{H}$ is denoted by $|\psi\rangle $. The inner product $\langle . ,. \rangle : \mathcal{H} \times \mathcal{H} \rightarrow \mathbb{C} $ has the following properties:
+        \begin{itemize}
+            \item \textit{Non negativity -} $\langle \psi , \psi \rangle \geq 0$ $\forall$ $|\psi \rangle \in \mathcal{H}$. $\langle \psi , \psi \rangle = 0$ if and only if $\langle \psi \rangle= 0$.
+            
+            \item \textit{Linearity in Second Argument -} $\langle \psi , \alpha \phi_1 + \beta \phi_2 \rangle = \alpha \langle \psi , \phi_1 \rangle + \beta \langle \psi , \phi_2 \rangle $
+            
+            \item \textit{Conjugate Linearity in First Argument -} $\langle \alpha \psi_1 + \beta \psi_2 , \phi \rangle = \bar{\alpha} \langle \psi_1 , \phi \rangle + \bar{\beta} \langle \psi_2 , \phi \rangle$
+            
+            \item \textit{Conjugate Symmetry -} $\langle \psi , \phi \rangle = \overline{\langle \phi , \psi \rangle}$
+        \end{itemize}
+        % continue on isomorphism, standard basis and the inner product <a,b> as a'b  
+        % Sumeet Khatri and Mark Wilde 
+    
+    \section{Describing a Closed Physical System}
+        The complete description of a closed physical system is given by its state $ | \psi \rangle $ where $ | \psi \rangle \in \mathcal{H}$ ($\mathcal{H}$ is a Hilbert Space) and norm of $ | \psi \rangle $ is 1 ($\langle \psi , \psi \rangle = 1$).
+        For every state $ | \psi \rangle \in \mathcal{H}$, $\exists$ $\langle \psi |$ in the dual vector space of $\mathcal{H}$. Also, $\langle \psi | = (| \psi \rangle)^{\dagger}$.
+
+        For $| \psi \rangle$ to represent a closed system, the Hilbert Space it belongs to must have dimension $d \geq 2$, $d \in \mathbb{N}$.
+
+
+\end{document}
