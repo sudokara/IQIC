@@ -5,6 +5,7 @@
 - Manav Shah
 - Mohd. Shamil K
 - Kriti Gupta
+- Shiven Sinha
 - Shrikara A
 - Swayam Agarwal
 - Vineeth Bhat
