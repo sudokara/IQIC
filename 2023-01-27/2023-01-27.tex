@@ -1,0 +1,96 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{IQIC - January 27rd, 2023}
+
+\begin{document}
+
+\maketitle
+
+\section{Recapitulation of Quantum Channels}
+
+A quantum channel $\mathcal{N}_{A \rightarrow B}$ taking operators from the set of bounded operators in $A$ to the set of bounded operators in $B$ is defined as
+
+\[\mathcal{N}_{A \rightarrow B} : \mathcal{B}(A) \rightarrow \mathcal{B}(B)\]
+
+has the following properties: 
+
+\subsection{Trace Preserving}
+
+\[\forall X \in \mathcal{B}(A),\quad Tr(\mathcal{N}_{A \rightarrow B}(X))=Tr(X) \]
+
+This preserves the validity of the outcome of the operation by keeping the trace as $1$.
+
+\subsection{Completely Positive}
+
+Taking the maximally entangled state $\Phi_{RA}$, defined as 
+
+\[\Phi_{RA} = | \phi \rangle \langle \phi | _{RA}\]
+
+where the system $R$ is a space characteristic of the channel, and,
+
+\[| \phi \rangle _{RA} = \frac{1}{\sqrt{d}}\ \Sigma^{d-1}_{i=0} | i \rangle_R | i \rangle_A \]
+
+where 
+
+\[ \{| i \rangle_R \}_i \quad \textrm{forms an orthonormal basis of R} \]
+\[ \{| i \rangle_A \}_i \quad \textrm{forms an orthonormal basis of A} \]
+\[d = infinum\{ dim(A), dim(R)\}\]
+
+the channel produces a semi-positive definite state as output regardless of input if 
+
+\[ \mathcal{N}_{A \rightarrow B}(\Phi_{RA}) 	\geq 0 \]
+
+ Here, $\mathcal{N}_{A \rightarrow B}(\Phi_{RA})$ is referred to as the \emph{Choi} of the channel.
+
+\section{Pure States}
+
+Pure states can be represented by $| \phi \rangle _{RA}$ such as:
+
+\[| \phi \rangle _{RA} = \Sigma^{d-1}_{i=0} \sqrt{p_i}| i \rangle_R | i \rangle_A \]
+
+where $d$, $| i \rangle_R$ and $| i \rangle_A$ remain the same as defined in the recapitulation. 
+
+$p_i$ represents the probability of $| i \rangle_R | i \rangle_A$ in the superposition of states, and $\Sigma^{d-1}_{i=0} {p_i} = 1$.
+
+\noindent Further, if the number of basis vectors in $R$ exceeds $d$ then we can choose any $d$ arbitrary basis vectors for forming 
+$\{| i \rangle_R \}_i$
+
+\section{Further comments}
+
+\begin{description}
+
+\item It must be noted that we are working in an \emph{open quantum system} while working with quantum channels
+
+\item Also,
+\[ \mathcal{N}_{A \rightarrow B}(\varphi_A) = Tr_{_{E'}}[U_{AE \rightarrow BE'} (\varphi_A \otimes \omega_E) U_{AE \rightarrow BE'}^{\dagger} ]\]
+
+where $U_{AE \rightarrow BE'}$ is a unitary matrix. Now, unitary matrices are square matrices implying that their application on a matrix preserves the matrix's dimensions. So, we have
+
+\[dim(AE) = dim(BE')\]
+
+$Tr_{_{E'}}(.)$ is the partial trace of $(.)$ with respect to matrix $E'$ defined as
+
+\[ Tr_{_{B}}(X_{AB}) = \Sigma_i \langle i |_{B} X | i \rangle_{B} \]
+
+where $\{ | i \rangle_{B} \}_i$ forms the orthonormal basis of $B$.
+
+The partial trace with respect to $B$ trims the input $X_{AB}$ to a matrix $Y_A$ in $A$ by removing all indication of $B$.
+
+\item $M_A \otimes N_B (\varphi_{AB})$  is a \emph{local operation} on $\varphi_{AB}$ where $M_A$ acts on $A$ and $N_B$ acts on $B$. Moreover, 
+
+\[ [ M_A \otimes \mathcal{I}_B, \mathcal{I}_A \otimes N_B ] = 0 \]
+
+which indicates that the order of application of $M_A$ and $N_B$ on $\varphi_{AB}$ doesn't matter.
+
+\item gWe also note
+
+\[ Tr_{_A}[M_A \otimes N_B (\varphi_{AB})] = N_B(\varphi_B) \]
+
+where 
+
+\[ \varphi_B = Tr_{_A}[\varphi_{AB}] \]
+
+\end{description}
+
+\end{document}
