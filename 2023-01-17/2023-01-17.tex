@@ -1,0 +1,98 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage[utf8]{inputenc}
+
+\title{Introduction to Quantum Information and Computing - Lecture 5}
+\author{Arnav Negi, Kriti Gupta, Manav Shah, Mohammed Shamil,\\ Shiven Sinha ,Shrikara A, Swayam Agrawal, Vineeth Bhat, Yash Adivarekar}
+\date{January 17, 2023}
+\begin{document}
+\maketitle
+\section{Measurements} \\
+The most general kind of measurements are called POVM’s. POVM stands for positive operator valued measure. \\
+They are denoted by \{$\Lambda^{x}$\}$_{x}$. It is a collection of positive semi-definite operators such that: \\ \\
+{$\Lambda^{x}$} $\ge$ 0 and \sum\limits_{x} {$\Lambda^{x}$} = 1. \\
+
+\subsection{Projective Measurements} \\
+They are denoted by \{\mathbb{P}$_{x}$\}. They are POVMs with additional properties:
+\begin{itemize}
+    \item \mathbb{P}$_{i}$^{2} = \mathbb{P}$_{i}$
+\end{itemize}
+\begin{itemize}
+    \item \mathbb{P}$_{i}$ \mathbb{P}$_{j}$  = \delta$_{ij}$ \mathbb{P}$_{i}$ = \delta$_{ij}$ \mathbb{P}$_{j}$
+\end{itemize}
+\\
+
+where \mathrm{x} is the outcome of the measurement and \mathbb{P}$_{i}$,\mathbb{P}$_{j}$ \in \{\mathbb{P}$_{x}$\} \\ \\
+
+\section{Measurement Probability}
+\subsection{Born's Rule}
+The Born's Rule is a postulate of Quantum Mechanics which helps determine the probability that a measurement of a quantum system will yield a given result. \\ \\ \\ \\
+The Born's rule states that if an observable corresponding to a self-adjoint operator A with discrete spectrum is measured in a system with normalized wave function
+$|\psi \rangle$ then : \\ \\
+1. The measured value will be one of the eigenvalues $\lambda$ of A. \\ \\
+2. The probability of measuring a given eigenvalue ${$\lambda$_{i}}$ will be equal to 
+ ${\displaystyle \langle {\psi} |P_{i}| {\psi} \rangle }$ \\ where ${P_{i}}$ is the projection onto the eigenspace of A corresponding to ${$\lambda$_{i}}$. \\
+ Equivalently, the probability can be written as ${\big |}\langle \lambda _{i}|\psi \rangle {\big |}^{2}}$
+ where ${|}\lambda_{i} \rangle$  is the eigenvector associated with the eigenvalue ${$\lambda$_{i}}$. \\
+\subsubsection{POVM Version of Born's Rule} \\
+The POVM element ${\displaystyle F_{i}}$ is associated with the measurement outcome ${\displaystyle i}$, such that the probability of obtaining it when making a measurement on the quantum state ${\displaystyle \rho }$  is given by:
+${\displaystyle p(i)=\operatorname {tr} (\rho F_{i}),}$
+\\
+\\
+The measurement of a quantum system in the state $\rho$ according to the POVM
+${M_{x}}$ : x $\in$ X induces a probability distribution. This distribution takes values belonging to the set of all possible values of x, and is defined by the Born rule:
+p(x) = Tr[${M_{x}}$ $\rho$].
+\\
+\\ 
+To determine the post-measurement states of the system being measured:
+\\
+Taking measurement with a projective operator $\mathbb{P_{i}}$.
+In this case let the post-measurement state be $\rho ^{x}$.
+\\
+\\
+$\rho$ $\xrightarrow{\text{$\mathbb{P_{i}}$}}$ $\rho '$
+\\
+\\
+$\rho '$ = $\dfrac{P_{i} \rho P_{i} ^ \dagger}{Tr[{P_{i} \rho P_{i} ^ \dagger}]}$ ...  eqn(1)
+\\
+\\
+\\
+Set of Orthonormal Basis is a projective measurement because it satisifes POVM and also the projective measurement conditions.
+\\ 
+\\
+After measuring once if we measure the same observable again , it will return the same outcome.
+\\
+\\
+Proof:
+Assume we got outcome as $\mathrm{i}$ in our first measurement. From eqn(1) our new state is $\rho '$.
+\\
+p(i) = Tr[$P_{x}$\rho '] = Tr[$P_{x}$$\dfrac{P_{i} \rho P_{i} ^ \dagger}{Tr[{P_{i} \rho P_{i} ^ \dagger}]}$] = Tr[$\dfrac{\delta_{xi} P_{i} \rho P_{i} ^ \dagger}{Tr[{P_{i} \rho }]}$].
+\\
+\\
+This value clearly would be 1 in case x = i otherwise this will be equal to 0.
+\\
+Hence Proved.
+
+\section{Transformation/Evolution of Quantum States}
+
+Quantum Communication necessarily involves the evolution \\
+of quantum systems (such as the evolution of photons when travelling through
+an optical fiber). Mathematically, this evolution is described by a
+quantum channel.
+\\
+\\
+ A Quantum channel is a linear, completely positive, and trace-preserving map acting on the state of the system. Note that we are working with Open Quantum Systems while talking about Quantum Channels.
+ \\
+\[\mathcal{N}_{A \rightarrow B} : \mathcal{B}(\mathcal{H}_{A}) \rightarrow \mathcal{B}(\mathcal{H}_{B})\]
+Note : $\[\mathcal{B}(\mathcal{H}_{A})$ denotes the set of operators.
+$\[dim(\mathcal{H}_{A})$ need not be equal to $\[dim(\mathcal{H}_{B}.)$
+\\
+\\
+Introduction to Trace Preserving and Completely Positive properties:
+\\
+New density operator also has trace equal to 1 and the channel produces a semi-definite state as output always if the choi of the channel is $\ge$ 0.
+\\
+\\
+Everything is a Quantum Channel with respect to time.
+
+\end{document}
