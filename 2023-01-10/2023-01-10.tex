@@ -1,1 +1,90 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb}
+\title{Introduction to Quantum Information and Computing - Lecture 3}
+\author{Arnav Negi, Kriti Gupta, Manav Shah, Mohammed Shamil,\\ Shiven Sinha ,Shrikara A, Swayam Agrawal, Vineeth Bhat, Yash Adivarekar}
+\date{\(10^t^h\) February, 2023}
+\begin{document}
+\maketitle
+\section{Multiple Systems}
+Let $H_{A}$ and $H_B$ be two system. To visualize multiple systems as a single system we use the idea of tensor product.\\
+$H_A \otimes H_B$ denotes the tensor product of $H_A$ and $H_B$\\
+For e.g. consider the following example : \\ \newline
+\begin{bmatrix}
+a_{11} & a_{12} \\
+a_{21} & a_{22}
+\end{bmatrix}
+A = \begin{bmatrix}
+a_{11}A & a_{12}A \\
+a_{21}A & a_{22}A
+\end{bmatrix}\\
+\newline
+We can easily see that
+\begin{align*}
+    dim(H_A \otimes H_B) = dim(H_A)\times dim(H_B)
+\end{align*}
+\section{Noisy Quantum Theory}
+Expectation value of an observable A is 
+\begin{align*}
+    <A>_{\psi} = <\psi|A|\psi>
+\end{align*}
+If $\psi$ is not normalized then normalize it by dividing with $<\psi|\psi>$.\\
+Now even if I change $|\psi>$ to $e^{\iota\phi}|\psi>$ expectation value does not changes because \\
+\begin{align*}
+    <\psi|e^{-\iota\phi} A e^{\iota\phi}|\psi> = <\psi|A|\psi>  \tag*{($e^{\iota\phi}$ is just a scalar)}
+\end{align*}
+\section{Density Operator}
+A quantum state is represented by a density operator defined on a  \\
+Hilbert space H. \\
+\begin{center}
+\( \rho : H \rightarrow H\)
+\end{center}
+\subsection{Requirement of Density operator}
+The question arises that what's the need of representing a state in terms of density operator. \\
+State vectors or wave functions $(|\psi>)$ can only represent pure states. Density operator can also represent mixed state. \\
+Density operator also allows for the calculation of the probabilities of the outcomes of any measurement performed upon system, using the Born rule.
+\subsection{Properties of Density operator}
+\begin{itemize}
+    \item \(\rho \geq 0\) \\
+    This means that all the eigenvalues of $\rho$ are $\geq 0$
+    \item \(\rho = \rho^\dagger\) \\
+    $\rho$ should be a Hermitian-matrix
+    \item $Tr(\rho) = 1$ \\
+    The summation of the diagonal elements of $\rho = 1$ 
+\end{itemize}
+So summarising, Density operator for a system is a positive semi-definite, Hermitian operator of trace one acting on the Hilbert space of the system
+\newline \newline
+For any state $|\psi>$, its density operator is $|\psi><\psi|$.\\
+Let's prove that $|\psi><\psi|$ follows all the property of the density operator : \\
+\newline
+\begin{newitem}
+1. We know that $(|\psi><\psi|)^2 = |\psi><\psi|\psi><\psi| = |\psi><\psi|$ \\
+So it's clear that $|\psi><\psi|$ is a pure state $\implies$ all eigenvalues are $\ge$ 0.\\ So first property is satisfied. \\
+% \pagebreak
 
+\begin{flushleft}2\end{flushleft}
+\begin{align*}(|\psi><\psi|)^\dagger &= (<\psi|)^\dagger (|\psi>)^\dagger \\
+    &= |\psi><\psi|
+\end{align}
+Hence $<\psi|\psi>$ is a hermitian operator.\\
+\newline
+3. \begin{align*}
+    Tr(|\psi><\psi|) &= Tr(<\psi|\psi>)  \tag*{(Trace Theorem)} \\
+    &=1
+\end{align}
+Hence, the trace of $|\psi><\psi| = 1$.\newline
+All the properties are satisfied by $|\psi><\psi|.
+\end{newitem}
+
+\section{Observables}
+Observables are Hermitian operators. \\
+Expectation value of an observable $\hat{O}$ for a quantum state $\rho$ is  $Tr(\hat{O}\rho)$\\
+If $\rho$ is pure state
+\begin{align*}
+Tr(\hat{O}\dot|\psi><\psi|) = <\psi|\hat{O}|\psi>
+\end{align}
+Given that $<\psi|\psi> = 1$
+
+% Hello i am in new section
+
+\end{document}
