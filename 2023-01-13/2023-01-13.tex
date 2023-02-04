@@ -1,0 +1,58 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage[utf8]{inputenc}
+\usepackage{bbold}
+
+\title{Introduction to Quantum Information and Computing - Lecture 4}
+\author{Arnav Negi, Kriti Gupta, Manav Shah, Mohammed Shamil, Shiven Sinha ,\\Shrikara A, Swayam Agrawal, Vineeth Bhat, Yash Adivarekar}
+
+\date{January 13, 2023}
+
+\begin{document}
+
+\maketitle
+
+\section{Observables}
+\begin{itemize}
+    \item Each observable can be represented by Hermitian operators.
+\end{itemize}
+\begin{itemize}
+    \item Expectation value of an observable ${\hat{O}}$ for a quantum state $\rho$  is Tr[${\hat{O}\rho}$]
+\end{itemize}
+\begin{itemize}
+    \item If $\rho$ is pure state {$\{|\psi\rangle\langle\psi|\}$}, then:\\\\
+Tr[${\hat{O}\rho}$]=Tr[${\hat{O}|\psi\rangle\langle\psi|}$]=Tr[${\langle\psi|\hat{O}|\psi\rangle}$]=${\langle\psi|\hat{O}|\psi\rangle}$
+\end{itemize}
+\begin{itemize}
+    \item If $\rho$ is not a pure state, i.e., $\rho$=$\sum\limits_{i}p_{i}|\psi_{i}\rangle\langle\psi_{i}|$, then:\\\\
+Tr[${\hat{O}\rho}$]=Tr[${\hat{O}\sum\limits_{i}p_{i}|\psi_{i}\rangle\langle\psi_{i}|}$]=$\sum\limits_{i}p_{i}$Tr[${\hat{O}|\psi_{i}\rangle\langle\psi_{i}|}$]=$\sum\limits_{i}p_{i}\langle\psi|\hat{O}|\psi_{i}\rangle$
+
+\end{itemize}
+
+\section{Mixed State}
+Mixed state is said to be the mixture of the different pure states.\\
+Mixed states can be written as:
+$\sigma=\sum\limits_{i}p_{i}\rho_{i} , where \sum\limits_{i}p_{i}=1$\\
+Here $\sigma$: is the mixed state , $\rho_{i}$:pure state and $p_{i}$: probability of state $\rho_{i}$ to be present in the mixed state.
+\begin{itemize}
+    \item A state is pure if $\rho^2=\rho$
+\end{itemize}
+Example1:-
+Let us consider a system which has 5 qubits of $|0\rangle$ and 5 qubits of $|1\rangle$ where $\{|0\rangle,|1\rangle\}$ are orthonormal basis. Find the mixed state of the system.\\
+Answer1:- $\sigma=\frac{1}{2}\{|0\rangle\langle0|+|1\rangle\langle1|\}$\\\\
+Example2:-
+Let us consider a system which has 5 qubits of $|+\rangle$ and 5 qubits of $|-\rangle$ where $\{|+\rangle,|-\rangle\}$ are orthonormal basis. Find the mixed state of the system.\\
+Answer2:- $\sigma=\frac{1}{2}\{|+\rangle\langle+|+|-\rangle\langle-|\}$\\\\
+Note:- Both $\sigma$ obtained in the above two examples are one and the same.\\
+Proof:-\\
+$\sigma=\frac{1}{2}\{|0\rangle\langle0|+|1\rangle\langle1|\}=\frac{1}{2}\{|+\rangle\langle+|+|-\rangle\langle-|\}$\\\\
+$\sigma$=$\frac{1}{2}(\sum\limits_{i}|i\rangle\langle i|)$=$\frac{1}{2}(\sum\limits_{i}|i\rangle\langle i|)$\\\\
+$\sigma=\frac{1}{2}\mathbb{1}=\frac{1}{2}\mathbb{1}$ 
+
+\section{Superposition}
+The linear combination of states is called superposition.\\
+A superpositioned state can be represented as:\\
+$|\psi\rangle=\sum\limits_{i}c_{i}|\psi_{i}\rangle$,\\
+where $\sum\limits_{i}c_{i}^2=1$ and $|\psi_{i}\rangle$ are the states that are being superimposed.
+
+\end{document}
