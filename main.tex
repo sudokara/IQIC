@@ -1,0 +1,110 @@
+\documentclass{article}
+
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{physics}
+
+\title{Introduction to Quantum Information and Computing - Lecture 6}
+\author{Shrikara A, Arnav Negi, Kriti Gupta, Manav Shah, Mohammed Shamil,\\ Shiven Sinha, Swayam Agarwal, Vineeth Bhat, Yash Adivarekar} % add contributors
+\date{24th January, 2023}
+
+\begin{document}
+
+
+    \pagenumbering{gobble}
+    \maketitle
+    \vfill
+    \tableofcontents
+    \newpage
+    \pagenumbering{arabic}
+
+
+    %fill
+    \section{Quantum Channel}
+    \begin{gather*}
+     \mathcal{N} _{A \rightarrow B} : \mathcal{B}(\mathcal{H _{A}}) \xrightarrow \mathcal{B}(\mathcal{H _{B}}) 
+    \end{gather*}
+
+
+    where 
+        \begin{center}
+            \((\mathcal{H _{A}})\) = Hilbert space of input system, 
+            
+            \( (\mathcal{B}) \) = Set of bounded operators  
+        \end{center}
+        Quantum channel is trace-preserving since it maps trace-class operators to trace-class operators. 
+        
+\medskip
+        \small
+        A matrix with a finite trace represents a trace-class operator. 
+        A finite-dimensional matrix is a trace-class operator if it is bounded.
+        
+\medskip
+        \normalsize
+        A \textbf{Super Operator} acts on an operator to give an operator.
+        
+        \subsection{Properties of Quantum Channel}
+        For a super operator to be a quantum channel, it has to follow the following properties:
+            \begin{enumerate}
+                \item Completely positive
+                \begin{gather*}
+                    id_{B} \otimes \mathcal{N}_{A \rightarrow{} C} (\Phi_{AB}) \geq 0
+                \end{gather*}
+                where $\Phi _{AB}\geq 0$ and $id$ = identity super operator, and $\phi_{AB}$ is a maximally entangled state.    
+                
+                \subitem Positivity:
+                    $X_{A} \geq 0 \Rightarrow{} \mathcal{N}_{A\rightarrow{} C} (\mathcal{X}_{A}) = \mathcal{Y}_{C} \geq 0$
+          
+                \item Trace-preserving map
+                \begin{gather*}
+                    Tr[\rho_{A}] \Rightarrow{} Tr[\mathcal{N}_{A \rightarrow C} (\rho _{A})]
+                \end{gather*}
+            \end{enumerate}
+
+\section{Joint States}
+    \subsection{Product State}
+     The density operator of the product state of A and B is the tensor product of the density operators of A and B.
+    \begin{gather*}
+     \rho _{AB} = \rho _{A} \otimes \sigma _{B}
+    \end{gather*}
+    In a product state, there is no correlation between the two states. A and B are independent.
+    
+    \subsection{Separable States}
+    The density operator of a separable state is obtained as: 
+    \begin{gather*}
+            \rho _{AB} =  \sum_{x} p_{x} \rho ^{(x)} _{A} \otimes \sigma ^{(x)} _{B}  \\
+    \end{gather*}
+    where $p _{x}$ is the probability of each state such that
+    \begin{gather*}
+            \sum p_{x} = 1,   p_{x} \geq 0
+    \end{gather*}
+Here, $\rho ^{(x)} _{A} $ and $\sigma ^{(x)} _{B}$ may be pure or mixed states.
+
+    \subsection{Entangled State}
+    State which cannot be written as separable states or product of states is in an entangled state.
+    \begin{gather*}
+        \mathcal{N}_{A \rightarrow C}(\Phi _{AB})
+    \end{gather*}
+    Dimension, d = $min(dim(\mathcal{H}_{A}), dim(\mathcal{H}_{B}))$\\
+
+    Maximally entangled state: $\Phi_{AB} = \frac{1}{d} \sum_{i,j=0}^{d-1}\ket{i}_{A} \otimes \ket{i}_{B} \bra{j}_{A} \otimes \bra{j}_{B}\\
+    =\frac{1}{d} \sum_{i,j=0}^{d-1}\ket{i} \bra{j}_{A} \otimes \ket{i} \bra{j}_{B}
+    $
+
+    \section{Kraus Operators: $K_{i}$}
+    \begin{gather*}
+        \mathcal{N}_{A \rightarrow C} (\cdot) = \sum_{i} K_{i}(\cdot) K_{i}\textsuperscript{\textdagger}
+    \end{gather*}
+    where
+    \begin{gather*}
+        \sum K_{i}\textsuperscript{\textdagger} K_{i} =  \mathbb{1}\\
+        K_{i} : \mathcal{H}_{A} \rightarrow{} \mathcal{H}_{C}
+    \end{gather*}
+
+    For any completely positive, trace-preserving quantum channel, \exists Kraus operators.
+
+    If an \mathcal{N} has Kraus operators $\Rightarrow{}$ it is completely positive and trace-preserving.
+\\\\
+    Projective measurement is a special case of quantum channel where \mathbb{P}s are Kraus operators.
+\end{document}
