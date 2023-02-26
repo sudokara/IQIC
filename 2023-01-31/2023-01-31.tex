@@ -1,0 +1,82 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{amsmath}
+\usepackage[utf8]{inputenc}
+\usepackage{bbold}
+
+\title{Lecture1 part 2}
+\author{Arnav Negi, Kriti Gupta, Manav Shah, Mohammed Shamil, Shiven Sinha ,\\Shrikara A, Swayam Agrawal, Vineeth Bhat, Yash Adivarekar}
+\date{January 31, 2023}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+\begin{itemize}
+    \item Quantum computing - "Natural generalization of computing".
+\end{itemize}
+\begin{itemize}
+    \item Quantum computers are computers that obey quantum physics.
+\end{itemize}
+
+
+\subsection{Why quantum computing?}
+\begin{itemize}
+    \item Extended Church Turing Thesis (ECT): Any algorithmic process can be efficiently simulated by a probabilistic Turing machine. 
+\end{itemize}
+\begin{itemize}
+    \item David Deutsch:-Is there a physical model of computation that violates ECT?
+\end{itemize}
+\begin{itemize}
+    \item Computation devices built using the principles of quantum physics can offer a stronger version to their thesis.
+\end{itemize}\begin{itemize}
+    \item Do quantum computers that obey quantum mechanics violate ECT?
+\end{itemize}\begin{itemize}
+    \item Feynman asks if we can simulate quantum physics on a classical computer.
+\end{itemize}\begin{itemize}
+    \item Number of variables to keep track of is exponential in the size of the quantum system. For example, for a 100 electron system,${2^{100}}$ bits are needed in comparison to 100 qubits.
+\end{itemize}
+
+\section{Quantum computing in the circuit model\\ (Postulates of Quantum mechanics in action)}
+\subsection{State Preparation}
+\begin{itemize}
+    \item Prepare the quantum computer in a given initial state\\
+       ${|\psi_{0}}\rangle$=${|0\rangle^{\otimes n}}$
+\end{itemize}\begin{itemize}
+    \item ${|0\rangle}$=${\begin{pmatrix}
+1 \\
+0
+\end{pmatrix}}$\\
+${|0\rangle\otimes|0\rangle}$=${|0\rangle^{\otimes2}}$=${|0\rangle|0\rangle}$=${|00\rangle}$
+\end{itemize}
+
+\subsection{Evolution}
+\begin{itemize}
+    \item Schrodinger's equation :\\\\
+    ${i\frac{d|\psi\rangle}{dt}}$=${H|\psi\rangle}$\\\\
+    ${|\psi(t)\rangle}$=${e^{-iHt}|\psi(0)\rangle$
+\end{itemize}
+\begin{itemize}
+    \item H: Hamiltonian observable for energy
+\end{itemize}
+\begin{itemize}
+    \item ${u_t}$=${e^{-iHt}$
+\end{itemize}
+\begin{itemize}
+    \item The initial state ${|\psi_0\rangle}$ evolves based on a series of unitary operators  \\
+    ${|\psi_f\rangle}$=${u_tu_{t-1}u_{t-2}...u_2u_1|\psi_0\rangle}$\\
+    where each ${u_i}$ is a quantum gate
+\end{itemize}
+
+\subsection{Measurement}
+
+\begin{itemize}
+    \item Measure the final state in the computational basis: M={${|j\rangle\langle j|}$ where ${j\in \{0,1\}^n}$}
+\end{itemize}
+\begin{itemize}
+    \item Observe ${|f\rangle}$ with probability p such that: \\
+    ${p=|\langle f|\psi_f\rangle|^2}$
+\end{itemize}
+
+\end{document}
