@@ -64,14 +64,18 @@
         \end{enumerate}
     How many queries do we need to make to $U_f$ to determine which of the two is true?  
     \subsection{Classical Reversible Computation}
-    Classically, two queries to $U_f$ are needed, one to determine the value of $f(0)$ and one to determine the value of $f(1)$. We can then compare the two and decide which promise is true.
+    Classically, two queries to $U_f$ are needed, one to determine the value of $f(0)$ and one to determine the value of $f(1)$. \\
+    We can then compare the two and decide which promise is true.
     %%! put images here
-    \\\\images of classical circuit\\
+    % \\\\images of classical circuit\\
+    \\ \includegraphics{images/classicalD0.png}
+    \includegraphics{images/classicalD1.png}
 
     \subsection{Quantum Computation}
     Consider the following quantum circuit:\\
     %%! put image here
-    \\\\image of quantum circuit\\\\\\
+    % \\\\image of quantum circuit\\\\\\
+    \includegraphics{images/The-Deutsch-Algorithm.jpg}
 
     \subsubsection{Finding Final State}
     Finding the output: \\
@@ -132,9 +136,10 @@
     Classically, to resolve a promise with probability 1, the worst case number of queries needed to $U_f$ is $\frac{2^n}{2} + 1$. This is when out of the $2^n$ possible n-bit strings to evaluate, the first half, i.e. $\frac{2^n}{2}$ strings all give the same output, either $0$ or $1$. Now, we need one additional query to resolve a promise. If it is the same as the result of the first half of bit strings, then $f$ is constant, else $f$ is balanced.
 
     \subsection{Quantum Computing}
-    image of circuit
+    % image of circuit
+    \includegraphics{images/400px-Deutsch-Jozsa-algorithm-quantum-circuit.png}
     \\
-    \subsubsection{Finding the Final state}:
+    \subsubsection{Finding the Final state}
     \begin{align*}
         |0\rangle^{\otimes n}|-\rangle \xrightarrow{H^{\otimes n} \otimes \mathbb{I}} & \frac{1}{\sqrt{2^n}} \left( \sum_{x \in \{0,1\}^n} |x\rangle \right) |-\rangle && \textit{Applying $H^{\otimes n} on first register set$} \\
         \xrightarrow{U_f} & \frac{1}{\sqrt{2^n}} \left( \sum_{x \in \{0,1\}^n} (-1)^{f(x)}|x\rangle \right) |-\rangle && \textit{Applying phase kickback}\\
