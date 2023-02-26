@@ -417,8 +417,8 @@ Output &= \ket{+^{\otimes n}}\\
 &= \frac{1}{\sqrt{2}^{n}} (\ket{0} + \ket{1}) \otimes \frac{1}{\sqrt{2}} (\ket{0} + \ket{1}) ... \otimes \frac{1}{\sqrt{2}} (\ket{0} + \ket{1}) \\
 &= \frac{1}{\sqrt{2}^{n}} (\ket{0...000} + \ket{0...001} + \ket{0...010} ...)\\
 &= \frac{1}{\sqrt{2}^{n}} \sum (\text{basis of n qubits)}\\\\
-H^{\otimes n} \ket{0^{\otimes n}} &= \frac{1}{\sqrt{2}^{n}} \sum \limits _{z \in {0,1}^{n}} \otimes \ket{z}\\\\
-H^{\otimes n} \ket{x} &= \frac{1}{\sqrt{2}^{n}} \sum \limits _{z \in {0,1}^{n}} \otimes (-1)^{x \cdot z}\ket{z}
+H^{\otimes n} \ket{0^{\otimes n}} &= \frac{1}{\sqrt{2}^{n}} \sum \limits _{z \in \{0,1\}^{n}} \ket{z}\\\\
+H^{\otimes n} \ket{x} &= \frac{1}{\sqrt{2}^{n}} \sum \limits _{z \in \{0,1\}^{n}} (-1)^{x \cdot z}\ket{z}
 \end{align*}
 
 \section{Universality of Quantum Gates}
