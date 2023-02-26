@@ -379,7 +379,7 @@ Here, for all $U$, dim = $2 \times 2 $ (if all $U_{i}s$ are single qubit)
 \subsection{Query Complexity}
 Query complexity is decided by number of queries made to a blackbox, $U_{f}$.
 
-\includegraphics[scale=0.5]{q3.png}
+\includegraphics[scale=0.3]{q3.png}
 
 Gates added before and after the blackbox to prepare desired input/output state do not affect the complexity. 
 
@@ -409,7 +409,7 @@ when $x \in \{0, 1\}$,
 \end{gather*}
 
 \subsection{N Hadamard gates}
-\includegraphics[scale=0.5]{q4.png}
+\includegraphics[scale=0.3]{q4.png}
 $H^{\otimes n} = H \otimes H ... \otimes H$
 
 \begin{align*}
@@ -511,15 +511,15 @@ We can then compare the two and decide which promise is true.
 Consider the following quantum circuit:\\
 %%! put image here
 % \\\\image of quantum circuit\\\\\\
-\includegraphics{The-Deutsch-Algorithm.jpg}
+\includegraphics[scale=0.5]{The-Deutsch-Algorithm.jpg}
 
 \subsubsection{Finding Final State}
 Finding the output: \\
 \begin{align*}
-	|0\rangle|-\rangle \xrightarrow{H \otimes \mathbb{I}} & |+\rangle|-\rangle                                                                                                                                  &  & \textit{Apply H to first register} \\
-	\xrightarrow{U_f}                                     & \frac{1}{\sqrt{2}} ((-1)^{f(0)}|0\rangle + (-1)^{f(1)}|-\rangle) |-\rangle                                                                          &  & \textit{Apply phase kickback}      \\
-	\xrightarrow{H \otimes \mathbb{I}}                    & \frac{1}{\sqrt{2}} ((-1)^{f(0)}|+\rangle + (-1)^{f(1)}|-\rangle) |-\rangle                                                                          &  & \textit{Apply H to first register} \\
-	=                                                     & \frac{1}{\sqrt{2}} \left( \frac{(-1^{f(0)})(|0\rangle + |1\rangle)}{\sqrt{2}} + \frac{(-1^{f(1)})(|0\rangle - |1\rangle)}{\sqrt{2}}\right)|-\rangle                                         \\
+	|0\rangle|-\rangle \xrightarrow{H \otimes \mathbb{I}} & |+\rangle|-\rangle                                                                                                                                  &  & \text{Apply H to first register} \\
+	\xrightarrow{U_f}                                     & \frac{1}{\sqrt{2}} ((-1)^{f(0)}|0\rangle + (-1)^{f(1)}|-\rangle) |-\rangle                                                                          &  & \text{Apply phase kickback}      \\
+	\xrightarrow{H \otimes \mathbb{I}}                    & \frac{1}{\sqrt{2}} ((-1)^{f(0)}|+\rangle + (-1)^{f(1)}|-\rangle) |-\rangle                                                                          &  & \text{Apply H to first register} \\
+	=                                                     & \frac{1}{\sqrt{2}} \left( \frac{(-1^{f(0)})(|0\rangle + |1\rangle)}{\sqrt{2}} + \frac{(-1^{f(1)})(|0\rangle - |1\rangle)}{\sqrt{2}}\right)|-\rangle                                       \\
 \end{align*}
 
 By rearranging terms containing $|0\rangle$ and $|1\rangle$, we obtain the final state $|\psi\rangle$ as
