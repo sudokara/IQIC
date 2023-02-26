@@ -1,0 +1,113 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx} % Required for inserting images
+\graphicspath{ {./images/} }
+\usepackage{mathtools} % for math tool slike arrows
+
+\title{Introduction to Quantum Information and Computing Half 2 Lecture 7}
+\author{Shrikara A, Arnav Negi, Kriti Gupta, Manav Shah, Mohammed Shamil,\\ Shiven Sinha, Swayam Agarwal, Vineeth Bhat, Yash Adivarekar}
+\date{\(24^t^h\) February, 2023}
+
+
+
+\begin{document}
+\linespread{2}
+
+\maketitle
+
+% \section{Introduction}
+
+So S is basically 
+\begin{align*}
+    2[sin(\theta/2)]|w> + cos(\theta/2)|S_{\overline{w}}>]
+\end{align*}
+
+$D=|S><S|-I$
+\raggedright
+\begin{align*}
+% \raggedright
+D &= 2[ |w><w|sin^2(\theta/2) + |w><S_{\overline{w}}|sin(\theta/2)cos(\theta/2) \\&+ |S_{\overline{w}}><w|sin(\theta/2)cos(\theta/2)+ |S_{\overline{w}}><S_{\overline{w}}|cos^2(\theta/2) ]
+% \raggedright
+\end{align*}
+
+After all D is a $2\times2$ matrix \\
+So in the basis {$|S_{\overline{w}}>,|w>$} D can be represented as : 
+\newline \newline
+D = 
+\begin{bmatrix}
+cos(\theta) & sin(\theta) \\
+sin(\theta) & -cos(\theta)
+\end{bmatrix}
+\newline
+We are given $G = D\cdot u_f$
+\newline\newline
+G = 
+\begin{bmatrix}
+cos(\theta) & sin(\theta) \\
+sin(\theta) & -cos(\theta)
+\end{bmatrix}
+\times
+\begin{bmatrix}
+1 & 0\\
+0 & -1
+\end{bmatrix}
+\newline \newline
+G = 
+\begin{bmatrix}
+cos(\theta) & -sin(\theta) \\
+sin(\theta) & cos(\theta)
+\end{bmatrix}\\
+\newline
+As we can see G is a rotation matrix. \\
+$|S> = G^k\cdot|S>$\\
+Let's see the product one time : 
+
+    
+$G|S>$ = 
+\begin{bmatrix}
+cos(\theta) & -sin(\theta) \\
+sin(\theta) & cos(\theta)
+\end{bmatrix}$|S>$\\
+$G|S>$ = sin(\theta+\theta/2)|w> + cos(\theta+\theta/2)|S_{\overline{w}}>\\
+\newline
+After k times : \\
+$|S>$ = sin(k\theta+\theta/2)|w> + cos(k\theta+\theta/2)|S_{\overline{w}}>\\
+At that time : 
+$sin(k\theta+\theta/2) = 1$\\
+$\implies \theta(k+1/2)=\pi/2$\\
+$\implies \theta = \frac{\pi}{2k+1}$
+We know that \\
+$sin(\theta/2) = \sqrt{\frac{M}{N}} \approx \theta/2$\\
+$2k+1=\frac{\pi\sqrt{N}}{2\sqrt{M}}$\\
+$k=\frac{\pi\sqrt{N}}{2\sqrt{M}} - \frac{1}{2}$\\
+$k\approx O(\sqrt{\frac{N}{M}})$\\
+So finally \\
+$G^k|S> = \frac{1}{\sqrt{M}} \sum_{f(|x>=1)}|x>$
+\newline \newline
+Now what if M is unknown :- \\
+(a) Estimate 'M' before only  (Quantum Counting )\\
+(b) Randomized Quantum Search 
+\newline \newline
+Amplification of amplitude : \\
+$G^kH^{\otimes n}|0^n> = G^k[sin(\theta/2)]|w> + cos(\theta/2)|S_{\overline{w}}>]$\\
+$\sqrt{p}=sin(\theta/2)$\\
+To amplify this term to 1 I need $\frac{1}{\sqrt{p}}$ queries.\\
+\newline
+$A^{\frac{1}{\sqrt{p}}}u|0> \approx |\psi_{good}>$
+
+\section{Modules of Quantum Computing }
+1. Adiabatic Model : \\
+$H(s) = (1-s)H_0+sH_k$\\
+s\in[0,1]\\
+\newline
+2. Quantum walks \\
+3. MDQC\\
+4. Topological Quantum Channel \\
+
+
+
+
+
+
+
+\end{document}
